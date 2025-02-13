@@ -1,0 +1,14 @@
+teps to Deploy & Load Test
+1️⃣ Run Redis & Celery Worker:
+
+
+docker-compose up -d redis
+celery -A app.worker worker --loglevel=info
+2️⃣ Run Backend:
+
+
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+3️⃣ Run Load Test (Locust):
+
+
+locust -f backend/locustfile.py --host=http://localhost:8000

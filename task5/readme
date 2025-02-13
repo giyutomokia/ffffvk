@@ -1,0 +1,22 @@
+Deployment Steps
+Backend Deployment:
+
+Build and run the backend:
+
+docker-compose up --build
+Deploy backend to AWS (EC2):
+
+scp -r backend/ ubuntu@your-server:/home/ubuntu/
+ssh ubuntu@your-server
+cd backend && docker-compose up --build -d
+Frontend Deployment (Vercel):
+
+Deploy React frontend using:
+sh
+
+npm install -g vercel
+vercel deploy
+Monitoring Setup:
+
+Visit http://your-server:9090 for Prometheus.
+Visit http://your-server:3000 for Grafana.

@@ -1,0 +1,11 @@
+Run the Server
+
+uvicorn main:app --reload
+API available at: http://127.0.0.1:8000/chat
+Example request:
+json
+
+{
+  "user_message": "You talking to me?",
+  "character": "Travis Bickle"
+}
